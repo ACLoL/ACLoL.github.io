@@ -35,7 +35,17 @@
 
   <!--** JAVASCRIPT - START **-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="resources/js/main.js"></script>
+  <script src="resources/js/main.js">
+    document.addEventListener("contextmenu", function(e) {
+            e.preventDefault();
+        });
+
+        document.addEventListener("keydown", function(e) {
+            if (e.key === "F12" || e.key === "F5") {
+                e.preventDefault();
+            }
+        });
+  </script>
   <!--** JAVASCRIPT - END **-->
 </head>
 
