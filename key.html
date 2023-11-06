@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<head>
+  <!--** CHARSET - START **-->
+  <meta charset="UTF-8" />
+  <!--** CHARSET - END **-->
+
+  <!--** TITLE - START **-->
+  <title>ACLoL Anahtar</title>
+  <!--** TITLE - END **-->
+  
+  <!--** DISCORD - START **-->
+  <meta name="og:site_name" content="ACLoL">
+  <meta name="og:type" content="object">
+  <meta name="og:image" content="">
+  <meta name="og:title" content="Anahtar">
+  <meta name="og:description" content="LoL için Oto-Mesaj Uygulaması">
+  <meta name="og:url" content="">
+  <meta name="theme-color" content="#4b81e6">
+  <!--** DISCORD - END **-->
+
+  <!--** ICON - START **-->
+  <link rel="icon" href="">
+  <link rel="shortcut icon" href="">
+  <!--** ICON - END **-->
+
+  <!--** VIEWPORT - START **-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <!--** VIEWPORT - END **-->
+
+  <!--** FONT AND CSS - START **-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa" />
+  <link rel="stylesheet" href="resources/css/main.css">
+  <!--** FONT AND CSS - END **-->
+
+  <!--** JAVASCRIPT - START **-->
+  <script>
+    document.addEventListener("contextmenu", function(e) {
+            e.preventDefault();
+        });
+
+        document.addEventListener("keydown", function(e) {
+            if (e.key === "F12" || e.key === "F5") {
+                e.preventDefault();
+            }
+       });
+</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="resources/js/main.js">
+    
+  </script>
+  <script>
+   function rawDosyaAlveKopyala() {
+  // Raw dosyadan veri almak için bir istek gönderin
+  fetch('https://raw.githubusercontent.com/ACLoL/ACLoLProgramDosyalari/main/Key', { method: 'GET' })
+    .then(function(response) {
+      if (response.status === 200) {
+        return response.text();
+      } else {
+        throw new Error('Veri alınamadı');
+      }
+    })
+    .then(function(data) {
+      var metinKutusu = document.createElement("textarea");
+      metinKutusu.value = data; // Raw dosyadan alınan veri
+      document.body.appendChild(metinKutusu);
+      metinKutusu.select();
+      document.execCommand("copy");
+      document.body.removeChild(metinKutusu);
+
+      var kopyalaButon = document.getElementById("kopyalaButon");
+      kopyalaButon.innerHTML = '<i class="fas fa-copy"></i> Kopyalandı';
+      setTimeout(function() {
+        kopyalaButon.innerHTML = '<i class="fas fa-copy"></i> Kopyala';
+      }, 2000);
+    })
+    .catch(function(error) {
+      console.error(error);
+    });
+}
+
+  </script>
+  <script>
+    
+</script>
+  <!--** JAVASCRIPT - END **-->
+</head>
+
+<body>
+  <!--** LOADER - START **-->
+  <div class="loader-container">
+    <div class="loader"><div></div><div></div><div></div><div></div></div>
+  </div>
+  <!--** LOADER - END **-->
+  
+  <!--** SITE - START **-->
+  <div class="site" id="site">
+    <!--** CONTENT - START **-->
+    <div class="content">
+      <!--** TITLE - START **-->
+      <header>
+        <div class="hero" id="hero">
+         <p>&nbsp;&nbsp;&nbsp;</p>
+         <p>&nbsp;&nbsp;&nbsp;</p>
+         <p>&nbsp;&nbsp;&nbsp;</p>
+          <div class="hero-title">
+            <a href="/">ACLoL</a>
+          </div>
+          <div class="hero-subtitle-link">
+            <h3><a href="https://www.leagueoflegends.com/">LoL</a> için Oto-Mesaj Uygulaması </a></h3>
+          </div>
+          <div class="download-hero-title">
+            <p>Anahtar</p>
+          </div>
+		  
+          <a href="javascript:void(0);" class="hero-button" onclick="rawDosyaAlveKopyala()" id="kopyalaButon"><i class="fas fa-copy"></i> Kopyala</a>
+          <div style="margin-top: 150px;"></div>
+        </div>
+      </header>
+      <!--** TITLE - END **-->
+
+      
+
+      
+
+
+      
+    </div>
+    <!--** CONTENT - END **-->
+  </div>
+  <!--** SITE - END **-->
+</body>
